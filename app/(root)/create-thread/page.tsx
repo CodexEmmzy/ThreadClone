@@ -6,7 +6,7 @@ import { fetchUser } from "@/lib/actions/user.actions";
 
 async function Page() {
   const user = await currentUser();
-  if (!user) return null;
+  if (!user) return console.log("Null");
 
   // fetch organization list created by user
   const userInfo = await fetchUser(user.id);
@@ -14,7 +14,7 @@ async function Page() {
 
   return (
     <>
-      <h1 className='head-text'>Create Thread</h1>
+      <h1 className="head-text">Create Thread</h1>
 
       <PostThread userId={userInfo._id} />
     </>
